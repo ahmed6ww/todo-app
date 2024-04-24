@@ -48,7 +48,7 @@ app = FastAPI(lifespan=lifespan, title="TODO APP", version="2.1.0")
 
 @app.get("/")
 async def root():
-    return {"Hello"}
+    return {"message":"Welcome to ToDo App"}
 
 @app.post('/todos/',response_model=Todo)
 async def create_todo(todo:Todo,session:Annotated[Session,Depends(get_session)]):
